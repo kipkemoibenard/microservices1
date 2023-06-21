@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: API-GATEWAY
+
+server:
+  port: 9191
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+spring.cloud.gateway:
+  discovery:
+    locator:
+      enabled: true
+
+  routes:
+    - id: EMPLOYEESERVICE
+      uri: lb://EMPLOYEESERVICE
+      predicates:
+        - Path=/employee/**
+
+    - id: DEPARTMENTSERVICE
+      uri: lb://DEPARTMENTSERVICE
+      predicates:
+        - Path=/department/**
+
+    # Add more routes for other services as needed
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

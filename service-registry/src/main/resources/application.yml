@@ -1,0 +1,17 @@
+server:
+  port: 8761
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+
+spring:
+  application:
+    name: eureka-server
+
+logging:
+  level:
+    com.netflix.eureka: 'OFF'
+    org.springframework.cloud.netflix.eureka.server: 'DEBUG'
+
