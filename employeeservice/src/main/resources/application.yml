@@ -1,9 +1,19 @@
 server:
   port: 9002
-
 spring:
   application:
     name: employeeservice
+  datasource:
+    url: jdbc:mysql://localhost:3306/microservicedb
+    username: root
+    password: mysql
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: update
 
 eureka:
   client:

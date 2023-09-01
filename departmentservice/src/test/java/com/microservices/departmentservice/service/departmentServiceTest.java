@@ -1,4 +1,4 @@
-package com.microservices.departmentservice.controller.service;
+package com.microservices.departmentservice.service;
 
 import com.microservices.departmentservice.entity.Department;
 import com.microservices.departmentservice.repository.DepartmentDao;
@@ -22,7 +22,7 @@ public class departmentServiceTest {
     private DepartmentService departmentService;
 
     @BeforeEach
-    public  void setUp() {
+    public void setUp() {
         MockitoAnnotations.openMocks(this);
     }
 
